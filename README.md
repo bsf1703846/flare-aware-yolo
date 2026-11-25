@@ -25,6 +25,7 @@ Reimplementation of: Ma et al., "A Reference-Free Lens-Flare-Aware Detector for 
 - `scripts/train_module.py` — train the small module (ResNet18 backbone + 3-layer MLP, MSE loss, Adam 1e-4, batch 64, 10 epochs). Saves `flare_car.pt`, `flare_light.pt`.
 - `scripts/recalibrate_val.py` — re-measure flared AP with ultralytics' own `ap_per_class`: Pass 1 plain (sanity), Pass 2 recalibrated. Current version is v6: recalibrate only boxes at conf ≥ 0.25 (the regime the module was trained on) — prepared as the fix for the mismatch above, not yet run.
 - `scripts/make_figure16.py` — failure figures: the images where flare hurt traffic lights most, plain vs recalibrated boxes (TP green, FP blue, GT yellow).
+- `figures/fig16_combined.jpg` — Step 16 failure figure (plain panels: 0 boxes; recalibrated panels: 10/3/1/15 boxes, mostly false positives on the flare glow).
 - `bdd100k_flared.yaml` — dataset config (COCO class order) for the flared val set.
 
 ## Honest simplification

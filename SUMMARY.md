@@ -42,7 +42,7 @@ We prepared a fix (apply the module only to boxes at confidence ≥ 0.25, the re
 
 ## 5. Traffic lights: the extra analysis
 
-The paper analyses the car class in depth. We add traffic lights, because they are special: the paper itself notes traffic lights are themselves flare sources (§5.1), and flare-removal models erase or distort them (Figure 12, §5.2) — a safety risk. Our method never removes anything; it only re-scores. But at 640 px the detector is already at its floor, so the flare effect cannot be seen. The next step is to re-measure at 1280 px (BDD100K's native resolution), where traffic lights are bigger and the baseline should rise into a measurable range. Failure figures (before/after pairs for the worst cases) will be added from Step 16.
+The paper analyses the car class in depth. We add traffic lights, because they are special: the paper itself notes traffic lights are themselves flare sources (§5.1), and flare-removal models erase or distort them (Figure 12, §5.2) — a safety risk. Our method never removes anything; it only re-scores. But at 640 px the detector is already at its floor, so the flare effect cannot be seen. The next step is to re-measure at 1280 px (BDD100K's native resolution), where traffic lights are bigger and the baseline should rise into a measurable range. Failure figures are in `figures/fig16_combined.jpg` — plain panels show 0 boxes; recalibrated panels show 10/3/1/15 boxes, mostly false positives clustered on the flare glow.
 
 ## 6. Limitations
 
